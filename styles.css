@@ -1,0 +1,367 @@
+/* 🌈 VARIABLES GLOBALES DE COLOR: permiten cambiar todos los colores desde un solo lugar */
+
+:root {
+    --building-color1: #aa80ff;
+    /* Color del edificio 1 */
+    --building-color2: #66cc99;
+    /* Color del edificio 2 */
+    --building-color3: #cc6699;
+    /* Color del edificio 3 */
+    --building-color4: #538cc6;
+    /* Color del edificio 4 */
+    --window-color1: #bb99ff;
+    /* Color de ventana para edificio 1 */
+    --window-color2: #8cd9b3;
+    /* Color de ventana para edificio 2 */
+    --window-color3: #d98cb3;
+    /* Color de ventana para edificio 3 */
+    --window-color4: #8cb3d9;
+    /* Color de ventana para edificio 4 */
+}
+
+
+/* 🔧 Aplica a todos los elementos: asegura que el padding y border no cambien el tamaño total */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* 🧱 El cuerpo de la página ocupa toda la pantalla sin barras de scroll */
+
+body {
+    height: 100vh;
+    /* Altura del 100% de la ventana del navegador */
+    margin: 0;
+    /* Sin espacio exterior */
+    overflow: hidden;
+    /* Oculta el scroll */
+}
+
+
+/* 🏙️ Configura el contenedor de los edificios del fondo y frente */
+
+.background-buildings,
+.foreground-buildings {
+    width: 100%;
+    /* Ocupa todo el ancho */
+    height: 100%;
+    /* Ocupa toda la altura */
+    display: flex;
+    /* Alinea los edificios horizontalmente */
+    align-items: flex-end;
+    /* Coloca los edificios en la parte inferior */
+    justify-content: space-evenly;
+    /* Espacio igual entre edificios */
+    position: absolute;
+    /* Posiciona sobre el fondo */
+    top: 0;
+}
+
+
+/* 🧱 Agrupador vertical de secciones de un edificio */
+
+.building-wrap {
+    display: flex;
+    flex-direction: column;
+    /* Elementos en columna */
+    align-items: center;
+    /* Centrado horizontal */
+}
+
+
+/* 💡 Agrupador horizontal para ventanas */
+
+.window-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+/* 🌇 Fondo del cielo con un degradado radial (sol al azul) */
+
+.sky {
+    background: radial-gradient( closest-corner circle at 15% 15%, #ffcf33, #ffcf33 20%, #ffff66 21%, #bbeeff 100%);
+}
+
+
+/* ============ 🏢 BACKGROUND BUILDINGS ============ */
+
+.bb1 {
+    width: 10%;
+    height: 70%;
+}
+
+.bb1a {
+    width: 70%;
+}
+
+.bb1b {
+    width: 80%;
+}
+
+.bb1c {
+    width: 90%;
+}
+
+
+/* Parte inferior con degradado entre color del edificio y las ventanas */
+
+.bb1d {
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(var(--building-color1) 50%, var(--window-color1));
+}
+
+
+/* Ventanas superiores en forma de franjas horizontales */
+
+.bb1-window {
+    height: 10%;
+    background: linear-gradient(var(--building-color1), var(--window-color1));
+}
+
+.bb2 {
+    width: 10%;
+    height: 50%;
+}
+
+
+/* Techo triangular usando bordes transparentes y uno de color */
+
+.bb2a {
+    border-bottom: 5vh solid var(--building-color2);
+    border-left: 5vw solid transparent;
+    border-right: 5vw solid transparent;
+}
+
+
+/* Cuerpo del edificio con franjas horizontales (ventanas) */
+
+.bb2b {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient( var(--building-color2), var(--building-color2) 6%, var(--window-color2) 6%, var(--window-color2) 9%);
+}
+
+
+/* Edificio con líneas verticales de color alternado */
+
+.bb3 {
+    width: 10%;
+    height: 55%;
+    background: repeating-linear-gradient( 90deg, var(--building-color3), var(--building-color3), var(--window-color3) 15%);
+}
+
+.bb4 {
+    width: 11%;
+    height: 58%;
+}
+
+
+/* Sección superior angosta */
+
+.bb4a {
+    width: 3%;
+    height: 10%;
+    background-color: var(--building-color4);
+}
+
+
+/* Parte media del edificio */
+
+.bb4b {
+    width: 80%;
+    height: 5%;
+    background-color: var(--building-color4);
+}
+
+
+/* Parte principal del edificio */
+
+.bb4c {
+    width: 100%;
+    height: 85%;
+    background-color: var(--building-color4);
+}
+
+
+/* Ventanas rectangulares */
+
+.bb4-window {
+    width: 18%;
+    height: 90%;
+    background-color: var(--window-color4);
+}
+
+
+/* ============ 🏙️ FOREGROUND BUILDINGS ============ */
+
+.fb1 {
+    width: 10%;
+    height: 60%;
+}
+
+
+/* Techo triangular */
+
+.fb1a {
+    border-bottom: 7vh solid var(--building-color4);
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+}
+
+.fb1b {
+    width: 60%;
+    height: 10%;
+    background-color: var(--building-color4);
+}
+
+
+/* Cuerpo con diseño de cuadrícula (ventanas) */
+
+.fb1c {
+    width: 100%;
+    height: 80%;
+    background: repeating-linear-gradient( 90deg, var(--building-color4), var(--building-color4) 10%, transparent 10%, transparent 15%), repeating-linear-gradient( var(--building-color4), var(--building-color4) 10%, var(--window-color4) 10%, var(--window-color4) 90%);
+}
+
+.fb2 {
+    width: 10%;
+    height: 40%;
+}
+
+
+/* Techo triangular */
+
+.fb2a {
+    width: 100%;
+    border-bottom: 10vh solid var(--building-color3);
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+}
+
+
+/* Parte principal del edificio */
+
+.fb2b {
+    width: 100%;
+    height: 75%;
+    background-color: var(--building-color3);
+}
+
+
+/* Ventanas verticales */
+
+.fb2-window {
+    width: 22%;
+    height: 100%;
+    background-color: var(--window-color3);
+}
+
+.fb3 {
+    width: 10%;
+    height: 35%;
+}
+
+.fb3a {
+    width: 80%;
+    height: 15%;
+    background-color: var(--building-color1);
+}
+
+.fb3b {
+    width: 100%;
+    height: 35%;
+    background-color: var(--building-color1);
+}
+
+
+/* Ventanas verticales */
+
+.fb3-window {
+    width: 25%;
+    height: 80%;
+    background-color: var(--window-color1);
+}
+
+.fb4 {
+    width: 8%;
+    height: 45%;
+    position: relative;
+    left: 10%;
+    /* Lo desplaza hacia la derecha */
+}
+
+
+/* Techo en forma de flecha apuntando a la izquierda */
+
+.fb4a {
+    border-top: 5vh solid transparent;
+    border-left: 8vw solid var(--building-color1);
+}
+
+.fb4b {
+    width: 100%;
+    height: 89%;
+    background-color: var(--building-color1);
+    display: flex;
+    flex-wrap: wrap;
+    /* Ventanas en varias líneas */
+}
+
+
+/* Ventanas redondas */
+
+.fb4-window {
+    width: 30%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: var(--window-color1);
+    margin: 10%;
+}
+
+
+/* Edificio con patrón de rayas horizontales y ventanas */
+
+.fb5 {
+    width: 10%;
+    height: 33%;
+    position: relative;
+    right: 10%;
+    background: repeating-linear-gradient( var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient( 90deg, var(--building-color2), var(--building-color2) 12%, var(--window-color2) 12%, var(--window-color2) 44%);
+}
+
+
+/* Edificio con patrón cruzado de líneas verticales y horizontales */
+
+.fb6 {
+    width: 9%;
+    height: 38%;
+    background: repeating-linear-gradient( 90deg, var(--building-color3), var(--building-color3) 10%, transparent 10%, transparent 30%), repeating-linear-gradient( var(--building-color3), var(--building-color3) 10%, var(--window-color3) 10%, var(--window-color3) 30%);
+}
+
+
+/* ============ 📱 ESTILOS RESPONSIVOS ============ */
+
+
+/* Cuando el ancho de la pantalla es menor a 1000px */
+
+@media (max-width: 1000px) {
+    /* Todos los edificios se vuelven negros, y las ventanas gris claro */
+     :root {
+        --building-color1: #000;
+        --building-color2: #000;
+        --building-color3: #000;
+        --building-color4: #000;
+        --window-color1: #777;
+        --window-color2: #777;
+        --window-color3: #777;
+        --window-color4: #777;
+    }
+    /* El cielo se vuelve más oscuro */
+    .sky {
+        background: radial-gradient( closest-corner circle at 15% 15%, #ccc, #ccc 20%, #445 21%, #223 100%);
+    }
+}
